@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="kanban.css" />
+    <script src="kanban.js"></script>
+    <title>Rishi's - Kanban Board</title>
+</head>
+
+<body onload="taskcount()">
+    <div id="container">
+        <div class="kanban-heading">
+            <strong class="kanban-heading-text">Rishi's - Kanban Board</strong>
+        </div>
+        <div id="loc" class="kanban-heading" style="
+          font-size: 1.3rem;
+          background-color: rgb(37, 192, 192);
+          padding: 0.8rem 0.8rem;
+          border-radius: 0.5rem;
+          margin: 2rem;
+        "></div>
+        <div class="kanban-board">
+            <svg width="250" height="400" style="border: 2px black solid; border-radius: 10px; fill: none">
+                <foreignobject width="250" height="400" style="background-color: lightcoral">
+                    <div class="kanban-block" id="backlog" onclick="taskcount()" ondrop="drop(event), taskcount()" ondragover="allowDrop(event)">
+                        <div class="cnt-block">
+                            <strong>
+                                Backlog:
+                                <p id="backlog-cnt" style="display: inline;"></p>
+                            </strong>
+                        </div>
+
+                        <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
+                            <sup>L2A-1</sup>
+                            <br>
+                            <span>Create UI</span>
+                            <hr>
+                            <sub>Author blogs</sub>
+                        </div>
+                        <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
+                            <sup>L2A-2</sup>
+                            <br>
+                            <span>Work on UX</span>
+                            <hr>
+                            <sub>Author blogs</sub>
+                        </div>
+                        <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
+                            <sup>L2A-3</sup>
+                            <br>
+                            <span>Render Project</span>
+                            <hr>
+                            <sub>Author blogs</sub>
+                        </div>
+                        <div class="task" id="task4" draggable="true" ondragstart="drag(event)">
+                            <sup>L2A-4</sup>
+                            <br>
+                            <span>Make Module</span>
+                            <hr>
+                            <sub>Author blogs</sub>
+                        </div>
+                        <div class="task" id="task5" draggable="true" ondragstart="drag(event)">
+                            <sup>L2A-5</sup>
+                            <br>
+                            <span>Unit Test</span>
+                            <hr>
+                            <sub>Author blogs</sub>
+                        </div>
+                        <div class="task" id="task6" draggable="true" ondragstart="drag(event)">
+                            <sup>L2A-6</sup>
+                            <br>
+                            <span>Release Alpha</span>
+                            <hr>
+                            <sub>Author blogs</sub>
+                        </div>
+                        <div class="task" id="task6" draggable="true" ondragstart="drag(event)">
+                            <sup>L2A-7</sup>
+                            <br>
+                            <span>Release Beta</span>
+                            <hr>
+                            <sub>Author blogs</sub>
+                        </div>
+                    </div>
+                </foreignobject>
+            </svg>
+
+            <svg width="250" height="400" style="border: 2px black solid; border-radius: 10px; fill: none">
+                <foreignobject width="250" height="400" style="background-color: rgb(250, 250, 110)">
+                    <div class="kanban-block" id="selectedfordev" onclick="taskcount()" ondrop="drop(event), taskcount()" ondragover="allowDrop(event)">
+                        <div class="cnt-block">
+                        <strong>
+                            Selected for Dev:
+                            <p id="selectedfordev-cnt" style="display: inline;"></p>
+                        </strong>
+                    </div>
+                    </div>
+                </foreignobject>
+            </svg>
+
+            <svg width="250" height="400" style="border: 2px black solid; border-radius: 10px; fill: none">
+                <foreignobject width="250" height="400" style="background-color: lightblue">
+                    <div class="kanban-block" id="inprogress" onclick="taskcount()" ondrop="drop(event), taskcount()" ondragover="allowDrop(event)">
+                        <div class="cnt-block">
+                        <strong>
+                            In Progress:
+                            <p id="inprogress-cnt" style="display: inline;"></p>
+                        </strong>
+                    </div>
+                    </div>
+                </foreignobject>
+            </svg>
+
+            <svg width="250" height="400" style="border: 2px black solid; border-radius: 10px; fill: none">
+                <foreignobject width="250" height="400" style="background-color: lightgreen">
+                    <div class="kanban-block" id="done" onclick="taskcount()" ondrop="drop(event), taskcount()" ondragover="allowDrop(event)">
+                        <div class="cnt-block">
+                        <strong>
+                            Done:
+                            <p id="done-cnt" style="display: inline;"></p>
+                        </strong>
+                    </div>
+                    </div>
+                </foreignobject>
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>
